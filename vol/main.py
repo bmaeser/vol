@@ -20,7 +20,7 @@ Options:
 
 
 import sys
-import vol
+import vol # this is ugly, change it
 
 from docopt import docopt
 
