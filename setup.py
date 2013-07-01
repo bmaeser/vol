@@ -23,7 +23,7 @@ setup(
     author_email='bernhard.maeser@gmail.com',
     url='https://github.com/bmaeser/vol',
     license="MIT",
-    description="pythonic devops toolbelt",
+    description="volume control in the shell for your mac",
     long_description=open('README.rst').read(),
     packages = packages,
     include_package_data=True,
