@@ -58,7 +58,6 @@ def main():
     "Run the main programm."
     args = docopt(__doc__, version='vol version '+ version)
     
-    #print args ## todo delete!
     
     if args['load'] and args['<profile>']:
 
