@@ -1,0 +1,54 @@
+# save me at $HOME/.vol
+
+# i am a comment
+; so am i
+
+# key-values are ini-style
+
+# all the same and valid:
+
+
+; out = 20
+; out=20
+; out:20
+; out: 20
+
+# allowed settings for mute:
+
+# true:
+; mute=true
+; mute=1
+; mute=on
+; mute=yes
+
+# false:
+; mute=false
+; mute=0
+; mute=off
+; mute=no
+
+
+
+[work]
+out:20
+alert:30
+
+[headphones]
+out:12
+alert:10
+
+[skype]
+in = 25
+out = 20
+alert = 10
+
+[party]
+in= 0
+alert= 0
+out= 100
+
+[silence]
+out = 0
+in = 0
+alert = 0
+mute=True
