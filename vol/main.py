@@ -51,7 +51,8 @@ def setvolume(device, amount):
     if device == 'in':
         device = 'input'
 
-    return asrun('set volume {0} volume {1}'.format(device, amount) )
+    cmd = 'set volume {0} volume {1}'.format(device, amount) 
+    return asrun(cmd)
 
 def main():
     "Run the main programm."
@@ -60,7 +61,6 @@ def main():
     #print args ## todo delete!
     
     if args['load'] and args['<profile>']:
-        print args['<profile>']
 
         home = os.path.expanduser("~")
         cfile = os.path.join(home, '.vol')
@@ -68,11 +68,24 @@ def main():
         try:
             cfg = ConfigParser.RawConfigParser()
             cfg.read(cfile)
-        except e:
-            print "Error: {0} in {1} does not exist".format(cfpath)
 
+            profile = args['<profile>']
+ 
+            if cfg.has_section(profile):
+                for o in cfg.options(profile):
+                    if o == 'out' or o == 'in' or o == 'alert':
+                        setvolume(o, cfg.get(profile, o))
+                    elif o == 'mute':
+                        if cfg.getboolean(profile, o):
+                            asrun('set volume output muted true')
+                        else:
+                            asrun('set volume output muted false')
+            else:
+                raise Error
 
-        ## todo implement!
+        except Exception, e:
+            print "Error: {0} in {1} does not exist or is malformed".format(args['<profile>'], cfile)
+
 
     elif args['info']:
         print asrun('get volume settings')
