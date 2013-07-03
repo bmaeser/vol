@@ -63,14 +63,14 @@ def main():
         print args['<profile>']
 
         home = os.path.expanduser("~")
-        cfpath = os.path.join(home, '.vol')
+        cfile = os.path.join(home, '.vol')
 
-        if os.path.exists(cfpath):
-            pass
-        else:
-            print "{0} does not exist".format(cfpath)
+        try:
+            cfg = ConfigParser.RawConfigParser()
+            cfg.read(cfile)
+        except e:
+            print "Error: {0} in {1} does not exist".format(cfpath)
 
-        print cfpath
 
         ## todo implement!
 
