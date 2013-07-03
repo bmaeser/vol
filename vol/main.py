@@ -21,11 +21,14 @@ Options:
 
 """
 
+import ConfigParser
+import os
 import subprocess
 import sys
-from . import __version__ as version
 
 from docopt import docopt
+
+from . import __version__ as version
 
 
 def asrun(ascript):
@@ -58,6 +61,17 @@ def main():
     
     if args['load'] and args['<profile>']:
         print args['<profile>']
+
+        home = os.path.expanduser("~")
+        cfpath = os.path.join(home, '.vol')
+
+        if os.path.exists(cfpath):
+            pass
+        else:
+            print "{0} does not exist".format(cfpath)
+
+        print cfpath
+
         ## todo implement!
 
     elif args['info']:
