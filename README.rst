@@ -33,7 +33,7 @@ So i can ssh into the box in my livingroom and change the volume while sitting o
 How?
 ****
 
-set output volume to 50 (of 100) max: ::
+set output volume to 50 (of 100 max): ::
 
     vol out 50
 
