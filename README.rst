@@ -56,7 +56,7 @@ Profiles
 
 vol looks for profiles in ``.vol`` in your home.
 
-If your username is 'bob' vol will parse ``/Users/bob/.vol```
+If your username is 'bob' vol will parse ``/Users/bob/.vol``
 
 a short example for ``.vol``: ::
 
