@@ -23,7 +23,7 @@ Options:
 
 import subprocess
 import sys
-import vol # this is ugly, change it
+from . import __version__ as version
 
 from docopt import docopt
 
@@ -52,7 +52,7 @@ def setvolume(device, amount):
 
 def main():
     "Run the main programm."
-    args = docopt(__doc__, version='vol version '+vol.__version__)
+    args = docopt(__doc__, version='vol version '+ version)
     
     #print args ## todo delete!
     
