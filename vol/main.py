@@ -43,11 +43,12 @@ def asrun(ascript):
 def setvolume(device, amount):
     "Set the volume to 'amount' on 'device' "
 
-    cmd ="set volume {0} volume {1}".format(device, amount)
-    print cmd
+    if device == 'out':
+        device = 'output'
+    if device == 'in':
+        device = 'input'
 
-    pass
-
+    return asrun('set volume {0} volume {1}'.format(device, amount) )
 
 def main():
     "Run the main programm."
