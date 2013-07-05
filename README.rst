@@ -16,9 +16,9 @@ or checkout the latest version from github: ::
     $ cd vol
     $ python setup.py install
 
-****
-What
-****
+*****
+What?
+*****
 
 vol lets you control your mac's audio volume from the commandline. It also has support for profiles.
 
@@ -32,6 +32,25 @@ So i can ssh into the box in my livingroom and change the volume while sitting o
 ****
 How?
 ****
+
+::
+
+    vol (in|out|alert) <volume>
+    vol mute
+    vol unmute
+    vol load <profile>
+    vol info
+
+    vol (-h | --help)
+    vol --version
+
+    Options:
+        -h --help     Show this screen.
+        --version     Show version.
+
+*********
+Examples
+*********
 
 set output volume to 50 (of 100 max): ::
 
