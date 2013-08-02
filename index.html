@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vol by bmaeser</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Vol</h1>
+        <p>volume control in the shell for your mac</p>
+
+        <p class="view"><a href="https://github.com/bmaeser/vol">View the Project on GitHub <small>bmaeser/vol</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/bmaeser/vol/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/bmaeser/vol/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/bmaeser/vol">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1></h1>
+
+<h1>
+<a name="vol" class="anchor" href="#vol"><span class="octicon octicon-link"></span></a>vol</h1>
+
+<hr><p>Installation</p>
+
+<hr><p>with pip as easy as: ::</p>
+
+<pre><code>$ pip install vol
+</code></pre>
+
+<p>or checkout the latest version from github: ::</p>
+
+<pre><code>$ git clone https://github.com/bmaeser/vol.git
+$ cd vol
+$ python setup.py install
+</code></pre>
+
+<hr><p>What?</p>
+
+<hr><p>vol lets you control your mac's audio volume from the commandline. It also has support for profiles.</p>
+
+<hr><p>Why?</p>
+
+<hr><p>Because i want to have profiles, and want to change my audio-volume via commandline.
+So i can ssh into the box in my livingroom and change the volume while sitting on the couch.</p>
+
+<hr><p>How?</p>
+
+<hr><p>::</p>
+
+<pre><code>vol (in|out|alert) &lt;volume&gt;
+vol mute
+vol unmute
+vol load &lt;profile&gt;
+vol info
+
+vol (-h | --help)
+vol --version
+
+Options:
+    -h --help     Show this screen.
+    --version     Show version.
+</code></pre>
+
+<hr><p>Examples</p>
+
+<hr><p>set output volume to 50 (of 100 max): ::</p>
+
+<pre><code>vol out 50
+</code></pre>
+
+<p>set input (mic) volume to 10: ::</p>
+
+<pre><code>vol in 10
+</code></pre>
+
+<p>mute and unmute: ::</p>
+
+<pre><code>vol mute
+vol unmute
+</code></pre>
+
+<p>load a profile from <code>$HOME/.vol</code> - file: ::</p>
+
+<pre><code>vol load party
+</code></pre>
+
+<hr><p>Profiles</p>
+
+<hr><p>vol looks for profiles in <code>.vol</code> in your home.</p>
+
+<p>If your username is 'bob' vol will parse <code>/Users/bob/.vol</code></p>
+
+<p>a short example for <code>.vol</code>: ::</p>
+
+<pre><code>[party]
+in= 0
+alert= 0
+out= 100
+
+[silence]
+out = 0
+in = 0
+alert = 0
+mute=True
+</code></pre>
+
+<p><code>.vol</code> uses ini-style syntax. Please see the full example configfile in ./conf/</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/bmaeser">bmaeser</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
