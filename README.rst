@@ -92,3 +92,9 @@ a short example for ``.vol``: ::
 
 ``.vol`` uses ini-style syntax. Please see the full example configfile in ./conf/
 
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/bmaeser/vol/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
